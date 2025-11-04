@@ -54,6 +54,8 @@ public class Player : Character, IShootable
     }
     }
 
+    // Update is called once per frame
+
  void Update() 
     {
         Shoot();

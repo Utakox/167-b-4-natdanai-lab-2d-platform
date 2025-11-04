@@ -4,11 +4,16 @@ public abstract class Character : MonoBehaviour
 {
 
     private int health;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     public int Health 
     { 
       get { return health; } 
       set { health = (value < 0 ? 0 : value); }
     }
+
+    
 
     protected Animator anim;
     protected Rigidbody2D rb;
@@ -26,9 +31,10 @@ public abstract class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        healthBar.SetHealth(health);
         Debug.Log($"{this.name} taken {damage} amounts of damage || Current Health is {Health}");
 
-        IsDead();
+        if (IsDead()) return;
     }
 
     public bool IsDead()
@@ -46,7 +52,8 @@ public abstract class Character : MonoBehaviour
 
     void Start()
     {
-        
+        currentHealth = health;
+        healthBar.SetMaxHealth(Health);
     }
 
     // Update is called once per frame
