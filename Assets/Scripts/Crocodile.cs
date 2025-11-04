@@ -51,7 +51,7 @@ public class Crocodile : Enemy, IShootable
             var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
             Rock rock = bullet.GetComponent<Rock>();
             rock.InitWeapon(30, this);
-            WaitTime = 0;
+            WaitTime = 0.0f;
         }
     }
 

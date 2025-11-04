@@ -4,7 +4,7 @@ public class Rock : Weapon
 {
 
     public Rigidbody2D rb;
-    public Vector2 force;
+    [SerializeField] public Vector2 force;
 
     public override void Move() 
     {
@@ -19,7 +19,7 @@ public class Rock : Weapon
 
     void Start()
     {
-        damage = 40;
+        damage = 30;
         force = new Vector2(GetShootDirection() * 90, 400);
         Move(); 
     }

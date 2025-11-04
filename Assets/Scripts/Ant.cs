@@ -10,7 +10,7 @@ public class Ant : Enemy
     {
         base.Initialize(20);
 
-        DamageHit = 20;
+        DamageHit = 10;
 
         velocity = new Vector2(-1.0f, 0f);
     }
